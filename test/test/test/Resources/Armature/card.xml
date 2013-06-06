@@ -1,0 +1,24 @@
+<skeleton name="card" frameRate="24" version="2.1">
+  <armatures>
+    <armature name="card">
+      <b name="card" x="0" y="115.65" kX="0" kY="0" cX="1" cY="1" pX="79.95" pY="84.3" z="0">
+        <d name="card" pX="0" pY="0"/>
+      </b>
+    </armature>
+  </armatures>
+  <animations>
+    <animation name="card">
+      <mov name="attack" dr="10" to="6" drTW="10" lp="0" twE="NaN">
+          <b name="card" sc="1" dl="0">
+              <f x="0" y="115.65" cocos2d_x="-79.95" cocos2d_y="31.35" kX="0" kY="0" cX="1" cY="1" pX="79.95" pY="84.3" z="0" dI="0" twE="0" dr="1"/>
+              <f x="9.95" y="101.6" cocos2d_x="-53.65" cocos2d_y="-2.45" kX="12.04" kY="12.04" cX="1.05" cY="1.05" pX="79.95" pY="84.3" z="0" dI="0" twE="0" dr="3"/>
+              <f x="-16.1" y="77.2" cocos2d_x="-125.75" cocos2d_y="23.75" kX="-20.51" kY="-20.51" cX="1.05" cY="1.05" pX="80.05" pY="84.3" z="0" dI="0" twE="0" dr="5"/>
+              <f x="0" y="115.65" cocos2d_x="-79.95" cocos2d_y="31.35" kX="0" kY="0" cX="1" cY="1" pX="79.95" pY="84.3" z="0" dI="0" dr="1"/>
+          </b>
+      </mov>
+    </animation>
+  </animations>
+    <TextureAtlas name="card" width="256" height="256">
+        <SubTexture name="card" width="160" height="169" x="0" y="0"/>
+    </TextureAtlas>
+</skeleton>
