@@ -10,7 +10,6 @@
 		064904FF1727F4CC00B06212 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 064904F31727F4CC00B06212 /* CloseNormal.png */; };
 		064905001727F4CC00B06212 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 064904F41727F4CC00B06212 /* CloseSelected.png */; };
 		064905041727F4CC00B06212 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 064904F81727F4CC00B06212 /* HelloWorld.png */; };
-		064910CA1727FCEE00B06212 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06490F3C1727F54700B06212 /* libcocos2dx.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
@@ -98,6 +97,7 @@
 		376ABD741737963B00828B83 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 376ABD701737963B00828B83 /* bg.jpg */; };
 		376ABD751737963B00828B83 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 376ABD711737963B00828B83 /* Images */; };
 		376ABD761737963B00828B83 /* Particle in Resources */ = {isa = PBXBuildFile; fileRef = 376ABD721737963B00828B83 /* Particle */; };
+		BD81AF28175F471C0079CB3E /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF6C353175F43B2004F6E45 /* libcocos2dx.a */; };
 		BF1373EF128A898400D9F789 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF492D4B1289302400A09262 /* OpenGLES.framework */; };
 		BF1373F0128A899500D9F789 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF492C21128924A800A09262 /* libxml2.dylib */; };
 		BF1373F1128A899E00D9F789 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF492B6912891AC600A09262 /* libz.dylib */; };
@@ -117,9 +117,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		06490F3B1727F54700B06212 /* PBXContainerItemProxy */ = {
+		BD81AF24175F461E0079CB3E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 06490F341727F54600B06212 /* cocos2dx.xcodeproj */;
+			containerPortal = BDF6C34E175F43B1004F6E45 /* cocos2dx.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1551A33E158F2AB200E66CFE;
+			remoteInfo = cocos2dx;
+		};
+		BDF6C352175F43B2004F6E45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDF6C34E175F43B1004F6E45 /* cocos2dx.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 1551A33F158F2AB200E66CFE;
 			remoteInfo = cocos2dx;
@@ -130,7 +137,6 @@
 		064904F31727F4CC00B06212 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		064904F41727F4CC00B06212 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
 		064904F81727F4CC00B06212 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
-		06490F341727F54600B06212 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = ../../cocos2dx/proj.ios/cocos2dx.xcodeproj; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -307,6 +313,7 @@
 		781C33B11547F06B00633F88 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		781C33B31547F06B00633F88 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		781C33B51547F06B00633F88 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BDF6C34E175F43B1004F6E45 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = "../../../../../../cocos2d-x/cocos2dx/proj.ios/cocos2dx.xcodeproj"; sourceTree = "<group>"; };
 		BF137426128A8E4600D9F789 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BF23D4E3143315EB00657E08 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		BF23D4E4143315EB00657E08 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -334,7 +341,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				064910CA1727FCEE00B06212 /* libcocos2dx.a in Frameworks */,
+				BD81AF28175F471C0079CB3E /* libcocos2dx.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -353,17 +360,8 @@
 			children = (
 				37406EC9173CBE3E007F2CB4 /* Box2D */,
 				06490F3D1727F64500B06212 /* CSArmature */,
-				06490F341727F54600B06212 /* cocos2dx.xcodeproj */,
 			);
 			name = libs;
-			sourceTree = "<group>";
-		};
-		06490F351727F54600B06212 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				06490F3C1727F54700B06212 /* libcocos2dx.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		06490F3D1727F64500B06212 /* CSArmature */ = {
@@ -395,6 +393,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				BDF6C34E175F43B1004F6E45 /* cocos2dx.xcodeproj */,
 				0649050B1727F51F00B06212 /* libs */,
 				BF23D4E2143315EB00657E08 /* Classes */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -744,6 +743,14 @@
 			path = ../Resources;
 			sourceTree = "<group>";
 		};
+		BDF6C34F175F43B1004F6E45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BDF6C353175F43B2004F6E45 /* libcocos2dx.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		BF23D4E2143315EB00657E08 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -784,6 +791,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BD81AF25175F461E0079CB3E /* PBXTargetDependency */,
 			);
 			name = Test;
 			productName = HelloWorld;
@@ -812,8 +820,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 06490F351727F54600B06212 /* Products */;
-					ProjectRef = 06490F341727F54600B06212 /* cocos2dx.xcodeproj */;
+					ProductGroup = BDF6C34F175F43B1004F6E45 /* Products */;
+					ProjectRef = BDF6C34E175F43B1004F6E45 /* cocos2dx.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -824,11 +832,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		06490F3C1727F54700B06212 /* libcocos2dx.a */ = {
+		BDF6C353175F43B2004F6E45 /* libcocos2dx.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libcocos2dx.a;
-			remoteRef = 06490F3B1727F54700B06212 /* PBXContainerItemProxy */;
+			remoteRef = BDF6C352175F43B2004F6E45 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -952,6 +960,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		BD81AF25175F461E0079CB3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = cocos2dx;
+			targetProxy = BD81AF24175F461E0079CB3E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -985,31 +1001,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libcurl/libs/armeabi\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libcurl/libs/armeabi-v7a\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libcurl/libs/x86\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libjpeg/libs/armeabi\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libjpeg/libs/armeabi-v7a\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libjpeg/libs/x86\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libpng/libs/armeabi\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libpng/libs/armeabi-v7a\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libpng/libs/x86\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libtiff/libs/armeabi\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libtiff/libs/armeabi-v7a\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libtiff/libs/x86\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libwebp/libs/armeabi\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libwebp/libs/armeabi-v7a\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libwebp/libs/x86\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libxml2/libs/armeabi\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libxml2/libs/armeabi-v7a\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libxml2/libs/x86\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/blackberry/libraries/armle-v7\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/blackberry/libraries/x86\"",
 					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/ios/libraries\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/linux/libraries/lib64\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/linux/libraries\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/mac/libraries\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/win32/libraries\"",
 				);
 				PRODUCT_NAME = Test;
 				PROVISIONING_PROFILE = "";
@@ -1049,31 +1041,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libcurl/libs/armeabi\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libcurl/libs/armeabi-v7a\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libcurl/libs/x86\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libjpeg/libs/armeabi\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libjpeg/libs/armeabi-v7a\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libjpeg/libs/x86\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libpng/libs/armeabi\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libpng/libs/armeabi-v7a\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libpng/libs/x86\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libtiff/libs/armeabi\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libtiff/libs/armeabi-v7a\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libtiff/libs/x86\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libwebp/libs/armeabi\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libwebp/libs/armeabi-v7a\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libwebp/libs/x86\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libxml2/libs/armeabi\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libxml2/libs/armeabi-v7a\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/android/prebuilt/libxml2/libs/x86\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/blackberry/libraries/armle-v7\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/blackberry/libraries/x86\"",
 					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/ios/libraries\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/linux/libraries/lib64\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/linux/libraries\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/mac/libraries\"",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/win32/libraries\"",
 				);
 				PRODUCT_NAME = Test;
 				PROVISIONING_PROFILE = "";

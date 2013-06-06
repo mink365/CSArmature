@@ -48,6 +48,8 @@ void CS_DISPLAY_ADD(Bone *bone, DecorativeDisplay *decoDisplay, DisplayData *dis
 		CS_DISPLAY_PARTICLE_ADD(bone, decoDisplay, displayData); break;
 	case  CS_DISPLAY_ARMATURE:
 		CS_DISPLAY_ARMATURE_ADD(bone, decoDisplay, displayData); break;
+    case CS_DISPLAY_NODE:
+        CS_DISPLAY_NODE_ADD(bone, decoDisplay, displayData); break;
 	default:
 		break;
 	}
@@ -63,6 +65,8 @@ void CS_DISPLAY_CREATE(Bone *bone, DecorativeDisplay *decoDisplay)
 		CS_DISPLAY_PARTICLE_CREATE(bone, decoDisplay); break; 
 	case CS_DISPLAY_ARMATURE:
 		CS_DISPLAY_ARMATURE_CREATE(bone, decoDisplay); break;
+    case CS_DISPLAY_NODE:
+        CS_DISPLAY_NODE_CREATE(bone, decoDisplay); break;
 	default:
 		break;
 	}
@@ -93,6 +97,8 @@ void CS_DISPLAY_UPDATE(Bone *bone, DecorativeDisplay *decoDisplay, float dt, boo
 		CS_DISPLAY_PARTICLE_UPDATE(bone, decoDisplay, dt, dirty); break; 
 	case CS_DISPLAY_ARMATURE:
 		CS_DISPLAY_ARMATURE_UPDATE(bone, decoDisplay, dt, dirty); break;
+    case CS_DISPLAY_NODE:
+        CS_DISPLAY_NODE_UPDATE(bone, decoDisplay, dt, dirty); break;
 	default:
 		break;
 	}
@@ -139,7 +145,7 @@ void CS_DISPLAY_SPRITE_CREATE(Bone *bone, DecorativeDisplay *decoDisplay)
 	TextureData *textureData = ArmatureDataManager::sharedArmatureDataManager()->getTextureData(textureName.c_str());
 	if(textureData)
 	{
-		//! Init display anchorPoint£¬ every Texture have a anchor point
+		//! Init display anchorPointÂ£Â¨ every Texture have a anchor point
 		skin->setAnchorPoint(ccp( textureData->pivotX, textureData->pivotY));
 	}
 
@@ -229,8 +235,6 @@ void CS_DISPLAY_PARTICLE_UPDATE(Bone *bone, DecorativeDisplay *decoDisplay, floa
 	system->update(dt);
 }
 
-
-
 void CS_DISPLAY_SHADER_ADD(Bone *bone, DecorativeDisplay *decoDisplay, DisplayData *displayData)
 {
 	ShaderDisplayData *sdp = ShaderDisplayData::create();
@@ -244,6 +248,37 @@ void CS_DISPLAY_SHADER_CREATE(Bone *bone, DecorativeDisplay *decoDisplay)
 	ShaderDisplayData *displayData = (ShaderDisplayData*)decoDisplay->getDisplayData();
 	ShaderNode *sn = ShaderNode::shaderNodeWithVertex(displayData->vert.c_str(), displayData->frag.c_str());
 	decoDisplay->setDisplay(sn);
+}
+    
+void CS_DISPLAY_NODE_ADD(Bone *bone, DecorativeDisplay *decoDisplay, DisplayData *displayData)
+{
+    NodeDisplayData *ndp = NodeDisplayData::create();
+    ndp->copy((NodeDisplayData*)displayData);
+    decoDisplay->setDisplayData(ndp);
+    
+    CS_DISPLAY_NODE_CREATE(bone, decoDisplay);
+}
+void CS_DISPLAY_NODE_CREATE(Bone *bone, DecorativeDisplay *decoDisplay)
+{
+    NodeDisplayData *displayData = (NodeDisplayData*)decoDisplay->getDisplayData();
+    CCNode *node = displayData->node;
+    
+    decoDisplay->setDisplay(node);
+}
+void CS_DISPLAY_NODE_UPDATE(Bone *bone, DecorativeDisplay *decoDisplay, float dt, bool dirty)
+{    
+    CCNode *displayNode = (CCNode*)decoDisplay->getDisplay();
+
+    Node node;
+    TransformHelp::matrixToNode(bone->nodeToArmatureTransform(), node);
+    displayNode->setPosition(node.x, node.y);
+    displayNode->setScaleX(node.scaleX);
+    displayNode->setScaleY(node.scaleY);
+    displayNode->setRotation(CC_RADIANS_TO_DEGREES(node.skewX));
+    
+//    displayNode->updateTransform();
+    
+    displayNode->update(dt);
 }
 
 }

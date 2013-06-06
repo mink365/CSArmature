@@ -116,6 +116,7 @@ namespace cs {
 		CS_DISPLAY_ARMATURE,        //! display is a Armature
 		CS_DISPLAY_PARTICLE,        //! display is a CCParticle.
 		CS_DISPLAY_SHADER,          //! display is a shader
+        CS_DISPLAY_NODE,            //! display is a normal node, to make the bone controller it
 
 		CS_DISPLAY_MAX
 	};
@@ -220,6 +221,24 @@ namespace cs {
 		std::string vert;    
 		std::string frag;
 	};
+#pragma endregion
+    
+#pragma region NodeDisplayData
+    class CS_EXTERN NodeDisplayData : public DisplayData
+    {
+    public:
+        CS_CREATE_NO_PARAM_NO_INIT(NodeDisplayData)
+    public:
+        NodeDisplayData();
+        virtual ~NodeDisplayData() {};
+    
+        inline void setParam(cocos2d::CCNode* node) { this->node = node;};
+    
+        void copy(NodeDisplayData *displayData);
+    public:
+        cocos2d::CCNode* node;
+    };
+    
 #pragma endregion
 
 

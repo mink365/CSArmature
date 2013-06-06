@@ -19,6 +19,10 @@ CCLayer *CreateLayer(int index)
 	{
 	case TEST_DRAGON_BONES_2_0:
 		pLayer = new TestDragonBones20(); break;
+    case TEST_CARD_ANIM:
+        pLayer = new TestCardAnim(); break;
+    case TEST_FRAME_ANIM_2_0:
+        pLayer = new TestFrameAnim20(); break;
 	case TEST_COCOSTUDIO_WITH_SKELETON:
 		pLayer = new TestCSWithSkeleton(); break;
 	case TEST_COCOSTUDIO_WITHOUT_SKELETON:
@@ -115,6 +119,8 @@ void TestScene::runThisTest()
 	cs::ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("Armature/robot.png", "Armature/robot.plist", "Armature/robot.xml");
 	cs::ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("Armature/cyborg.png", "Armature/cyborg.plist", "Armature/cyborg.xml");
 	cs::ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("Armature/Dragon.png", "Armature/Dragon.plist", "Armature/Dragon.xml");
+    cs::ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("Armature/card.png", "Armature/card.plist", "Armature/card.xml");
+    cs::ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("Armature/ice.png", "Armature/ice.plist", "Armature/ice.xml");
 	
 
 	s_nActionIdx = -1;
@@ -228,6 +234,65 @@ std::string TestDragonBones20::title()
 	return "Test Export From DragonBones version 2.0";
 }
 
+void TestCardAnim::onEnter()
+{
+    TestLayer::onEnter();
+    
+	cs::Armature *armature = NULL;
+	armature = cs::Armature::create("card");
+	armature->getAnimation()->playByIndex(0);
+	armature->getAnimation()->setAnimationScale(0.5f);
+	armature->setPosition(VisibleRect::right().x / 3, VisibleRect::center().y);
+	addChild(armature);
+    
+    // test change the desplay node
+    armature = cs::Armature::create("card");
+	armature->getAnimation()->playByIndex(0);
+	armature->getAnimation()->setAnimationScale(0.5f);
+	armature->setPosition(VisibleRect::right().x / 3.0 * 2.0, VisibleRect::center().y);
+	addChild(armature);
+    
+    CCSprite *frame = CCSprite::create("Images/frame_ghost.png");
+    NodeDisplayData data;
+    data.setParam(frame);
+    
+    ParticleDisplayData displayData;
+	displayData.setParam("Particle/SmallSun.plist");
+    
+    Bone *cardBone = armature->getBone("card");
+    cardBone->addDisplay(&data, 0);
+    cardBone->changeDisplayByIndex(0, true);
+    
+//    Bone *bone  = Bone::create("p2");
+//	bone->addDisplay(&data, 0);
+//	bone->changeDisplayByIndex(0, true);
+//	bone->setIgnoreMovementBoneData(true);
+//	bone->setZOrder(100);
+//	bone->setScale(1.0);
+//	armature->addBone(bone, "card");
+}
+
+std::string TestCardAnim::title()
+{
+    return "Test Card Animation";
+}
+
+void TestFrameAnim20::onEnter()
+{
+	TestLayer::onEnter();
+    
+	cs::Armature *armature = NULL;
+	armature = cs::Armature::create("ice");
+	armature->getAnimation()->playByIndex(0);
+	armature->getAnimation()->setAnimationScale(1.0f);
+	armature->setPosition(VisibleRect::center().x, VisibleRect::center().y);
+	addChild(armature);
+}
+
+std::string TestFrameAnim20::title()
+{
+    return "Test Frame anim Export From DragonBones version 2.0";
+}
 
 void TestCSWithSkeleton::onEnter()
 {

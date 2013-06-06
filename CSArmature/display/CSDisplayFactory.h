@@ -57,6 +57,10 @@ void CS_DISPLAY_PARTICLE_UPDATE(Bone *bone, DecorativeDisplay *decoDisplay, floa
 
 void CS_DISPLAY_SHADER_ADD(Bone *bone, DecorativeDisplay *decoDisplay, DisplayData *displayData);
 void CS_DISPLAY_SHADER_CREATE(Bone *bone, DecorativeDisplay *decoDisplay);
+    
+void CS_DISPLAY_NODE_ADD(Bone *bone, DecorativeDisplay *decoDisplay, DisplayData *displayData);
+void CS_DISPLAY_NODE_CREATE(Bone *bone, DecorativeDisplay *decoDisplay);
+void CS_DISPLAY_NODE_UPDATE(Bone *bone, DecorativeDisplay *decoDisplay, float dt, bool dirty);
 }
 
 #endif

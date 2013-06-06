@@ -33,6 +33,8 @@ public:
 
 enum {
 	TEST_DRAGON_BONES_2_0 = 0,
+    TEST_CARD_ANIM,
+    TEST_FRAME_ANIM_2_0,
 	TEST_COCOSTUDIO_WITH_SKELETON,
 	TEST_COCOSTUDIO_WITHOUT_SKELETON,
 	TEST_COCOSTUDIO_WITH_CONVERT_FROM_DRAGON_BONES_2_0,
@@ -74,7 +76,19 @@ public:
 	virtual std::string title();
 };
 
+class TestCardAnim : public TestLayer
+{
+public:
+    virtual void onEnter();
+    virtual std::string title();
+};
 
+class TestFrameAnim20 : public TestLayer
+{
+public:
+    virtual void onEnter();
+    virtual std::string title();
+};
 
 class TestCSWithSkeleton : public TestLayer
 {

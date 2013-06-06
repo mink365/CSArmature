@@ -119,6 +119,20 @@ namespace cs {
 		displayType = displayData->displayType;
 	}
 #pragma endregion
+    
+    
+NodeDisplayData::NodeDisplayData(void)
+    :node(NULL)
+{
+    displayType = CS_DISPLAY_NODE;
+}
+    
+void NodeDisplayData::copy(NodeDisplayData* displayData)
+{
+    this->node = displayData->node;
+    
+    displayType = displayData->displayType;
+}
 
 #pragma region Node
 	Node::Node()
